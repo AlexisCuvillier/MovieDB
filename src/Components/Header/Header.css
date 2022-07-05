@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding:0;
+    text-decoration: none;
+}
+
+.backgroundDiv {
+    background-color: rgb(17, 22, 77); 
+    display:flex;
+    align-items: baseline;
+    justify-content: center;
+    height: 50px;
+    padding-top: 10px;
+}
+
+
+
+.inputSearchBar {
+    width: 300px;
+    height: 40px;
+    border-radius: 30px ;
+    border:none
+    
+}
+.inputSearchBar::-webkit-input-placeholder{
+ font-weight: bold;   
+ color: rgb(139, 134, 134);
+}
+
+.buttonSearch {
+    background: rgb(82,232,191);
+    background: linear-gradient(90deg, rgba(82,232,191,1) 29%, rgba(31,182,242,0.9556197478991597) 75%);
+    border-radius: 30px;
+    width: 100px;
+    height: 40px;
+    position: relative;
+    right: 5%;
+    border:none;
+    color: white;
+    font-weight: bold;
+    
+}
+
