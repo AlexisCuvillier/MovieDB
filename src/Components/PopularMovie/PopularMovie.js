@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import './PopularMovie.css'
+import moment from 'moment'
+import 'moment/locale/fr'
+
 
 export default function PopularMovie() {
+
+    moment.locale('fr')
 
   const API_URL =
     "https://api.themoviedb.org/3/movie/popular?api_key=d4dfced817985d414b727774821c9678&language=fr-FR";
@@ -59,7 +64,7 @@ export default function PopularMovie() {
             </div>
             <div className="info">
               <p>{item.title}</p>
-              <p>{item.release_date}</p>
+              <p>{moment(item.release_date).format('Do MMM YY')}</p>
               <img src="" alt="" />
             </div>
           </div>
