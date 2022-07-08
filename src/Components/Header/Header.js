@@ -11,7 +11,7 @@ export default function Header() {
   const API_URL ="https://api.themoviedb.org/3/movie/popular?api_key=d4dfced817985d414b727774821c9678";
   const API_IMG = "https://image.tmdb.org/t/p/w500/";
 
-  const [query, setQuery] = useState("");
+  
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -22,6 +22,13 @@ export default function Header() {
       });
   }, []);
 
+
+const [query, setQuery] = useState(""); 
+
+const changeHandler=(e)=> {
+    setQuery(e.target.value)
+  }
+
   const searchMovie = async (e) => {
     e.preventDefault();
     console.log("Searching ===", searchMovie);
@@ -31,8 +38,6 @@ export default function Header() {
       const url = `https://api.themoviedb.org/3/search/movie?api_key=d4dfced817985d414b727774821c9678&query=${query}`;
       const res = await fetch(url);
       const data = await res.json();
-      console.log('query ====',query);
-      console.log('data ====',data);
       setMovies(data.results)
     } 
     catch (er) 
@@ -41,10 +46,8 @@ export default function Header() {
     }
   }
 
-  const changeHandler=(e)=> {
-    setQuery(e.target.value)
-    console.log('change===',changeHandler);
-  }
+
+
   return (
     <div>
       <div className="backgroundDiv">
@@ -55,6 +58,7 @@ export default function Header() {
             placeholder="Rechercher un film"
             value={query}
             onChange={changeHandler}
+            // onSubmit={searchMovie}
           />
           <button className="buttonSearch" onSubmit={searchMovie}>
             Rechercher
