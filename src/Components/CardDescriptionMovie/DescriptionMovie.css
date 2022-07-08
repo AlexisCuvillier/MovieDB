@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 15px;
+    
+
+}
+
+.container-description {
+    background: greenyellow;
+    width: 80%;
+    height: 400px;
+    border-radius: 20px;
+    margin-top: 15px;
+    
+}
