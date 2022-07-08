@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
+import DesriptionMovie from "../CardDescriptionMovie/DesriptionMovie";
 import "./Header.css";
+import moment from 'moment'
+import 'moment/locale/fr'
+import PopularCard from "../PopularMovie/PopularCard";
 
 export default function Header() {
-  const API_SEARCH =
-    "https://api.themoviedb.org/3/search/movie?api_key=d4dfced817985d414b727774821c9678&query=";
-  const API_URL =
-    "https://api.themoviedb.org/3/movie/popular?api_key=d4dfced817985d414b727774821c9678";
+
+  const API_SEARCH ="https://api.themoviedb.org/3/search/movie?api_key=d4dfced817985d414b727774821c9678&query=";
+  const API_URL ="https://api.themoviedb.org/3/movie/popular?api_key=d4dfced817985d414b727774821c9678";
+  const API_IMG = "https://image.tmdb.org/t/p/w500/";
 
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
@@ -14,7 +18,6 @@ export default function Header() {
     fetch(API_SEARCH)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setMovies(data.results);
       });
   }, []);
@@ -28,7 +31,8 @@ export default function Header() {
       const url = `https://api.themoviedb.org/3/search/movie?api_key=d4dfced817985d414b727774821c9678&query=${query}`;
       const res = await fetch(url);
       const data = await res.json();
-      console.log('data ===',data);
+      console.log('query ====',query);
+      console.log('data ====',data);
       setMovies(data.results)
     } 
     catch (er) 
@@ -44,7 +48,7 @@ export default function Header() {
   return (
     <div>
       <div className="backgroundDiv">
-        <form onSubmit={searchMovie}>
+        <form>
           <input
             className="inputSearchBar"
             type="text"
@@ -57,6 +61,9 @@ export default function Header() {
           </button>
         </form>
       </div>
-    </div>
+      <DesriptionMovie />
+
+
+      </div>
   );
 }

@@ -17,20 +17,24 @@ export default function DesriptionMovie() {
     fetch(API_URL)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setMovies(data.results);
         
       });
   }, []);
 
   const offset = currentPage * PER_PAGE; 
-  console.log("offset", offset );
+
 
   const currentPageMovie = movies
     .slice(offset, offset + PER_PAGE)
-    console.log('currentPageMovie ====', currentPageMovie);
+    console.log("currentPageMovie =====", currentPageMovie);
 
-   
+  
+  const firstDescription = currentPageMovie.filter(movie => {
+    return movie[1]
+    console.log(movie);
+  })
+
 
 
   return (
@@ -38,14 +42,15 @@ export default function DesriptionMovie() {
         <h1>Description</h1>
         <div className="container-description">
         {currentPageMovie.map((item) => (
-          console.log('map ===',currentPageMovie),
-    
-        
+
+      
+
         
       
         
-        <p>{item.title[1]}</p>
-      ))}
+        <p>{item.release_date}</p>
+      
+     ))}
      </div>
     </div>
   );
