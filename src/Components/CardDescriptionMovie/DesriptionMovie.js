@@ -27,7 +27,7 @@ export default function DesriptionMovie() {
 
   const currentPageMovie = movies
     .slice(offset, offset + PER_PAGE)
-    console.log("currentPageMovie =====", currentPageMovie.id);
+    // console.log("currentPageMovie =====", currentPageMovie.id);
 
 
     
@@ -36,10 +36,10 @@ export default function DesriptionMovie() {
 
       
   const firstDescription = currentPageMovie.findIndex(item => item[0])
-  console.log('firstDescription ===',firstDescription);
+  // console.log('firstDescription ===',firstDescription);
   
   const firstDescrip = currentPageMovie.filter(item => item.title === 'Doctor Strange in the Multiverse of Madness' )
-  console.log('firstDescrip ===',firstDescrip);
+  // console.log('firstDescrip ===',firstDescrip);
 
    let back = API_IMG 
 

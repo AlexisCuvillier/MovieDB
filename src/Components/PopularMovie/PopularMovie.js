@@ -29,7 +29,8 @@ export default function PopularMovie() {
         setMovies(data.results);
         
       });
-  }, []);
+
+  },[]);
 
   const offset = currentPage * PER_PAGE; 
   // console.log("offset", offset );
@@ -40,6 +41,7 @@ export default function PopularMovie() {
   return (
     <>
     <Header />
+    <h2>Populaire</h2>
     <div className="container-movie">
       {currentPageMovie.map((item) => (
         <PopularCard 
