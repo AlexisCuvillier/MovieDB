@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import ReactPaginate from "react-paginate";
 import './PopularMovie.css'
 import moment from 'moment'
 import 'moment/locale/fr'
 import Header from "../Header/Header";
-import DesriptionMovie from "../CardDescriptionMovie/DesriptionMovie";
 import PopularCard from "./PopularCard";
 
 
