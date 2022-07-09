@@ -9,7 +9,7 @@ import "../PopularMovie/PopularMovie.css";
 export default function Header() {
   const API_IMG = "https://image.tmdb.org/t/p/w500/";
   const API_URL =
-    "https://api.themoviedb.org/3/movie/popular?api_key=d4dfced817985d414b727774821c9678";
+    `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}`;
 
   const [query, setQuery] = useState("");
   const [searchMovies, setSearchMovies] = useState([]);
@@ -28,7 +28,7 @@ export default function Header() {
             setSearchMovies(data.results);
             console.log(data);
           });
-        const url = `https://api.themoviedb.org/3/search/movie?api_key=d4dfced817985d414b727774821c9678&query=${query}`;
+        const url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${query}`;
         const res = await fetch(url);
         const data = await res.json();
         setSearchMovies(data.results);
@@ -41,7 +41,7 @@ export default function Header() {
 
   const changeHandler = (e) => {
     setQuery(e.target.value);
-    console.log("change===", e);
+    // console.log("change===", e);
   };
 
   console.log("searchMovies====", searchMovies);
