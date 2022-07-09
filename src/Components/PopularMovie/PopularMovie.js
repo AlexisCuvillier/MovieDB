@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import './PopularMovie.css'
 import moment from 'moment'
 import 'moment/locale/fr'
