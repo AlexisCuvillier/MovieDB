@@ -18,7 +18,7 @@ export default function PopularCard({
                 />
             <div className="info">
               <p>{title}</p>
-              <p>{date}</p>
+              <p className='date'>{date}</p>
               <img src="" alt="" />
             </div>
           </div>

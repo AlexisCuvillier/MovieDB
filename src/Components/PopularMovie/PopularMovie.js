@@ -13,9 +13,11 @@ export default function PopularMovie() {
 
   const API_URL =
     `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=fr-FR`;
+
   const API_IMG = "https://image.tmdb.org/t/p/w500/";
 
   const PER_PAGE = 5
+  
   const [currentPage, setCurrentPage] = useState(0)
   const [movies, setMovies] = useState([]);
 
