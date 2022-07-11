@@ -19,7 +19,8 @@
     width: 380px;
     height: 35px;
     border-radius: 30px ;
-    border:none
+    border:none;
+    
     
 }
 .inputSearchBar::-webkit-input-placeholder{

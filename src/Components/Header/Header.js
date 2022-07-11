@@ -13,6 +13,13 @@ export default function Header() {
 
   const [query, setQuery] = useState("");
   const [searchMovies, setSearchMovies] = useState([]);
+  const [idMovie, setIdMovie] = useState([])
+  const handleClick = (e) => {
+    setIdMovie({
+      id:e.currentTarget.id
+    })
+  }
+  console.log('idMovieSearch ===', idMovie);
 
   const searchMovie = async (e) => {
     e.preventDefault();
@@ -74,6 +81,7 @@ export default function Header() {
           <div className="container-movie">
         {searchMovies.map((item) => (
           <PopularCard
+            func={handleClick}
             key={item.id}
             id={item.id}
             title={item.title}

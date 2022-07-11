@@ -33,6 +33,19 @@ export default function PopularMovie() {
 
   },[]);
 
+
+  
+
+  const [idMovie, setIdMovie] = useState([])
+
+  const handleClick = (e) => {
+    setIdMovie({
+      id:e.currentTarget.id
+    })
+  }
+  
+  console.log('idMovie ====', idMovie);
+
   const offset = currentPage * PER_PAGE; 
   // console.log("offset", offset );
 
@@ -46,6 +59,7 @@ export default function PopularMovie() {
     <div className="container-movie">
       {currentPageMovie.map((item) => (
         <PopularCard 
+        func={handleClick}
         key={item.id}
         id={item.id}
         title={item.title}
